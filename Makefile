@@ -4,8 +4,3 @@ install:
 
 format:	
 	black *.py
-
-lint:
-	pylint --disable=R,C Project1/*.py
-
-all: install format lint
