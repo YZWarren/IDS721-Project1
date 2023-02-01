@@ -10,3 +10,6 @@ created flask microservice framework
 implemented html for code rain
 
 updated Makefile, requirements.txt, and makefile.yml for github Actions CI
+
+## examples
+integrated chatgpt api with microservice
