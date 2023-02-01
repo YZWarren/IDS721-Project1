@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+
+<h2>Wellcome to use ChatGPT!</h2>
+<h3>ChatGPT - Ask a question</h3>
+    <form action="/chatgpt" method="post">
+      <input type="text" name="prompt" placeholder="Enter an question" required />
+      <input type="submit" value="Get answer" />
+    </form>
+    <!-- <table class="table">
+        <tr>
+            <td>Answer: </td>
+            <td id="result"></td>
+        </tr>
+    </table> -->
+
+    {% if result %}
+        <h3>Answer: </h3>
+        <div class="result">{{ result }}</div>
+    {% endif %}
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
+    $(function () {
+        asyncGetDetail();
+    });
+
+
+    function asyncGetDetail() {
+        $.ajax({
+            url: "/chatgpt",
+            type: "POST",
+            success: function (data) {
+                console.log(data)
+                $("#result").text(data);
+            },
+            error: function () {
+                layer.msg("client request failure");
+            },
+        })
+    }
+
+</script>
+</html>
