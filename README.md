@@ -12,4 +12,4 @@ This repo records all projects and progress did in IDS721 at Duke
 
 
 ## examples
-integrated chatgpt api with microservice
+![](assets/example_chatgpt.gif)
