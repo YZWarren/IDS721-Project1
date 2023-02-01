@@ -12,4 +12,4 @@ This repo records all projects and progress did in IDS721 at Duke
 
 
 ## examples
-![](assets/example_chatgpt.gif)
+![](assets/example_chatgpt.png)
