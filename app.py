@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/chatgpt', methods=['GET', 'POST'])
 def chatgpt():
-    api_key="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"
+    api_key="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"
     prompt = ""
     headers = {"Authorization":f"Bearer {api_key}"}
     api_url = "https://api.openai.com/v1/completions"
