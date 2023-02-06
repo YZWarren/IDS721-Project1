@@ -1,7 +1,7 @@
 from flask import request, Flask, render_template, jsonify
 import requests
-from acgan.ACGAN import *
-import numpy as np
+# from acgan.ACGAN import *
+# import numpy as np
 
 
 app = Flask(__name__)
