@@ -1,14 +1,18 @@
-from flask import request, Flask, render_template
+from flask import request, Flask, render_template, jsonify
 import requests
 
 app = Flask(__name__)
 
 @app.route('/chatgpt', methods=['GET', 'POST'])
 def chatgpt():
-    api_key="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"
+    api_key="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"
     prompt = ""
     headers = {"Authorization":f"Bearer {api_key}"}
     api_url = "https://api.openai.com/v1/completions"
+
+    resp = dict()
+    resp["choices"] = [{"text": " "}]
+    resp = jsonify(resp)
 
     prompt = request.form.get('prompt')
     print("Prompt inputted: ", prompt)
@@ -18,9 +22,13 @@ def chatgpt():
             'temperature':1,
             }
     response = requests.post(api_url,json = data,headers = headers)
+    print("Response: ", response, type(response))
     resp = response.json()
-    print("Response: ", resp)
-    print("Answer: ", resp["choices"][0]["text"].strip(),end="\n")
+    if "error" in resp.keys():
+        print("Error: ", resp["error"])
+        result = resp["error"]["message"].strip()
+        return render_template("chatgpt.html", result=result if prompt else None)
+
     result = resp["choices"][0]["text"].strip()
     return render_template("chatgpt.html", result=result if prompt else None)
 
