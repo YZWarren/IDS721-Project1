@@ -16,6 +16,9 @@ container-lint:
 
 refactor: format lint
 
+run:
+	python app.py
+
 deploy:
 	#deploy goes here
 		
