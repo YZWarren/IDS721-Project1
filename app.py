@@ -5,13 +5,13 @@ app = Flask(__name__)
 
 @app.route('/chatgpt', methods=['GET', 'POST'])
 def chatgpt():
-    api_key="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"
+    api_key="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"
     prompt = ""
     headers = {"Authorization":f"Bearer {api_key}"}
     api_url = "https://api.openai.com/v1/completions"
 
     prompt = request.form.get('prompt')
-    print(prompt)
+    print("Prompt inputted: ", prompt)
     data = {'prompt':prompt,
             "model":"text-davinci-003",
             'max_tokens':256,
@@ -19,9 +19,10 @@ def chatgpt():
             }
     response = requests.post(api_url,json = data,headers = headers)
     resp = response.json()
-    print("A:",resp["choices"][0]["text"].strip(),end="\n")
+    print("Response: ", resp)
+    print("Answer: ", resp["choices"][0]["text"].strip(),end="\n")
     result = resp["choices"][0]["text"].strip()
-    return render_template("chatgpt.html", result=result)
+    return render_template("chatgpt.html", result=result if prompt else None)
 
 @app.route('/')
 def hello():
