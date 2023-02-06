@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/chatgpt', methods=['GET', 'POST'])
 def chatgpt():
-    api_key="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"
+    api_key="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"
     prompt = ""
     headers = {"Authorization":f"Bearer {api_key}"}
     api_url = "https://api.openai.com/v1/completions"
@@ -15,14 +15,12 @@ def chatgpt():
     resp = jsonify(resp)
 
     prompt = request.form.get('prompt')
-    print("Prompt inputted: ", prompt)
     data = {'prompt':prompt,
             "model":"text-davinci-003",
             'max_tokens':256,
             'temperature':1,
             }
     response = requests.post(api_url,json = data,headers = headers)
-    print("Response: ", response, type(response))
     resp = response.json()
     if "error" in resp.keys():
         print("Error: ", resp["error"])
