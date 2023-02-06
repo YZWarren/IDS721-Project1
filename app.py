@@ -27,8 +27,9 @@ def chatgpt():
 @app.route('/')
 def hello():
     """return an HTTP greeting and show code rain."""
-    return render_template("hello.html")
+    # return render_template("hello.html")
+    return "This is the home page. Please go to /chatgpt to chat with GPT-3."
     # return render_template("chatgpt.html")
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080, debug=True)
