@@ -50,7 +50,7 @@ def refresh_generate():
 @app.route('/')
 def hello():
     """return an HTTP greeting and show code rain."""
-    return render_template("hello.html")
+    return "Welcome to GAN playground, please go to /generate to generate image"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
