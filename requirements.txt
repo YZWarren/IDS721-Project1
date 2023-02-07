@@ -5,7 +5,7 @@ pytest==7.1.1
 pylint==2.13.5
 pytest-cov==3.0.0
 requests==2.26.0
-torch==1.13.1+cpu
+torch
 torchvision
 torchaudio
 torchsummary
