@@ -11,4 +11,3 @@ torchvision
 torchaudio
 torchsummary
 matplotlib
-awsebcli
