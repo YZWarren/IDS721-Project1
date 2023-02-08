@@ -1,5 +1,8 @@
 # IDS721-Projects
 [![Python application test with Github Actions](https://github.com/YZWarren/IDS721-Projects/actions/workflows/main.yml/badge.svg)](https://github.com/YZWarren/IDS721-Projects/actions/workflows/main.yml)
+
+Link to my deployed version: https://k6kgjpm4zz.us-east-1.awsapprunner.com/
+
 This repo was originally aimed to deploy a GAN image generator via flask microservice, yet failed. Changed into a Calculator microservice.
 All code run and tested both in codespace and Dockerfile
 
