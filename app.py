@@ -74,7 +74,7 @@ def evaluate_expr(stack):
                 res = res * curr
             last_operation = " "
             lastNum = curr
-        elif operation == "/":
+        elif operation == "%":
             curr = int(stack.pop())
             if last_operation == "+":
                 res = res - lastNum + lastNum / curr
@@ -122,7 +122,7 @@ def hello():
 @app.route("/calculate")
 def calculate_home():
 
-    return "Calculator that supports +, -, *, /, (, and ).Usage: /calculate/(1+2)*3\n\r"
+    return "Calculator that supports +, -, *, %, (, and ).Usage: /calculate/(1+2)*3\n\r"
 
 @app.route("/calculate/<expression>")
 def calculate_expr(expression):
