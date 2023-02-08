@@ -3,7 +3,9 @@ LABEL maintainer="yuzhou.zhao1022@gmail.com"
 
 EXPOSE 8080
 
-COPY requirements.txt requirements.txt
+COPY . /app
+
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 

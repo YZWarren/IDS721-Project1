@@ -6,8 +6,8 @@ pylint==2.13.5
 pytest-cov==3.0.0
 requests
 numpy
-# torch
-# torchvision
-# torchaudio
-# torchsummary
-# matplotlib
+torch
+torchvision
+torchaudio
+torchsummary
+matplotlib
