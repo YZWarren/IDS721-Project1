@@ -20,6 +20,8 @@ All code run and tested both in codespace and Dockerfile
 4. Choose `Docker` for `Platform specification`. Upload the zip file of your repo (Zip all files within the repo)
 5. Create Environment with your Containerized code
 
+## Deploy with Elastic Beanstalk CLI
+
 ## Goals checklist
 - [x] build flask framework
 - [x] have Makefile, requirements.txt, and makefile.yml for github Actions CI
