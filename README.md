@@ -21,6 +21,13 @@ All code run and tested both in codespace and Dockerfile
 5. Create Environment with your Containerized code
 
 ## Deploy with Elastic Beanstalk CLI
+0. `pip install awsebcli`
+1. build environment with python 3.8
+```conda create -n proj1 python=3.8```
+2. Initialize your EB CLI repository with the eb init command:
+```eb init -p python-3.8 flaskGANplayground --region us-east-1```
+3. Create an environment and deploy your application to it with eb create:
+```eb create flaskGan-env```
 
 ## Goals checklist
 - [x] build flask framework
